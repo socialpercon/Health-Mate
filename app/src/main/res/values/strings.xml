@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Health Mate</string>
+    <string name="health_mate">Health Mate</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="no_account_yet_create_one">No Account Yet? Create One</string>
+</resources>
