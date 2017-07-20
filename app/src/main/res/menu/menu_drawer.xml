@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="@string/profile1"
+        android:icon="@drawable/ic_person_black_24dp"/>
+
+    <item
+        android:id="@+id/dashboard"
+        android:title="@string/dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp" />
+    
+    <item
+        android:id="@+id/nav_settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings_black_24dp"/>
+
+    <item
+        android:id="@+id/nav_help"
+        android:title="Help &amp; Feedback"
+        android:icon="@drawable/ic_help_black_24dp"/>
+
+    <item
+        android:id="@+id/nav_about"
+        android:title="@string/about_health_mate"
+        android:icon="@drawable/ic_android_black_24dp"/>
+
+</menu>

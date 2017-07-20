@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         final Button logInButton = (Button) findViewById(R.id.logInButton);
     }
     public void logIn (View view) {
-        Intent intent = new Intent(this, AllergyAndDisease.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 }

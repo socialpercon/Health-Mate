@@ -5,4 +5,27 @@
     <string name="password">Password</string>
     <string name="log_in">Log In</string>
     <string name="no_account_yet_create_one">No Account Yet? Create One</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="search">Search</string>
+    <string name="profile1">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="about_health_mate">About Health Mate</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tap_the_icon_below_to_add_user_to_the_system">Tap the icon below to add user to the system</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="gender">Gender</string>
+    <string name="enter_fullname">Enter Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="blood_pressure_level">Blood Pressure Level</string>
+    <string name="cholestoral_level">Cholestoral Level</string>
+    <string name="blood_sugar_level">Blood Sugar Level</string>
+    <string name="cholestorol_level">Cholestorol Level</string>
+    <string name="cholesterol_level">Cholesterol Level</string>
+    <string name="we_ll_keep_in_contact_with_you_via_email_or_mobile_contact">We\'ll keep in contact with you via email or mobile contact.</string>
 </resources>
