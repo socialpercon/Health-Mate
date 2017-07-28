@@ -1,22 +1,23 @@
 package com.example.deandrewmoore.healthmate;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
-import static android.R.attr.name;
+import static android.R.attr.id;
 
 public class UserField extends AppCompatActivity {
 
     private Toolbar mToolBar;
-    UserDatabaseAdapter userHelper;
+    UserDatabaseHelper userDb   ;
     EditText fullName, email, number, gender, age, pressure, cholesterol, sugar;
+    Button submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class UserField extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        userHelper = new UserDatabaseAdapter(this);
+        userDb = new UserDatabaseHelper(this);
 
         fullName = (EditText) findViewById(R.id.NameInput);
         email = (EditText) findViewById(R.id.useremail);
@@ -38,28 +39,29 @@ public class UserField extends AppCompatActivity {
         pressure = (EditText) findViewById(R.id.bloodpressurecount);
         cholesterol = (EditText) findViewById(R.id.cholestoral_level);
         sugar = (EditText) findViewById(R.id.bloodsugarlevel);
+        submitBtn = (Button) findViewById(R.id.submitbtn);
+        submitData ();
     }
 
-    public void submitData(View view) {
-        String full=fullName.getText().toString();
-        String mail=email.getText().toString();
-        String num=number.getText().toString();
-        String gen=gender.getText().toString();
-        String a=age.getText().toString();
-        String press=pressure.getText().toString();
-        String chol=cholesterol.getText().toString();
-        String suga=sugar.getText().toString();
+    public void submitData () {
+        submitBtn.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = userDb.insertData(fullName.getText().toString(), email.getText().toString(), number.getText().toString(),
+                                gender.getText().toString(),age.getText().toString(), pressure.getText().toString(), cholesterol.getText().toString(),
+                                sugar.getText().toString() );
 
-        long id = userHelper.insertData(full,mail,num,gen,a,press,chol,suga);
-        if(id==0)
-        {
-            Message.message(this, "OOPS, Unsuccessful");
-        }else {
-            Message.message(this, "Great, Your Data was successfully saved");
-        }
+                        if (isInserted = true)
+                            Message.message(UserField.this, "Great, Your Data was saved.");
+                        else
+                            Message.message(UserField.this, "OOPS, something went wrong!");
 
-        Intent intent = new Intent(this, Results.class);
-        startActivity(intent);
+                        Intent intent = new Intent(UserField.this, Results.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override
